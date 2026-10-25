@@ -2,6 +2,8 @@
 
 # yravgGrab — grab any product into builder-ready docs, ethically
 
+## Preview
+
 ![workflow](assets/grab-flow.svg)
 
 ## The problem
@@ -46,7 +48,7 @@ assets/                animated SVGs
 docs/                  GitHub Pages landing
 ```
 
-## What it needs
+## Requirements
 An agent with shell + web access; a headless Chrome/Chromium. Optional: REA, the self-learning loop, yt-dlp, ffmpeg, poppler.
 
 ## What it's not for
@@ -55,6 +57,12 @@ An agent with shell + web access; a headless Chrome/Chromium. Optional: REA, the
 - Cloning or redistributing someone else's assets, code or content
 - Scraping personal data
 
+## Responsible use
+- Respect robots.txt, AI opt-out signals (Content-Signal, `X-Robots-Tag: noai`, ai.txt) and each site's terms. The gate stops the run if AI agents are disallowed; don't disable it.
+- Never bypass logins, paywalls, CAPTCHAs, rate limits or licences, and never collect personal data.
+- Use captures for study and inspiration. Don't clone or redistribute someone else's assets, code, copy or brand.
+- You are responsible for how you use this skill.
+
 ## Credits
 - [REA](https://github.com/morluto/rea) by morluto — static analysis.
 - [reverse-engineer-anything self-learning loop](https://github.com/Speedrunlab/reverse-engineer-anything-self-learning-loop) by Speedrun AI Labs (MIT) — gate / define-100% / learn loop and parity templates.
@@ -62,4 +70,6 @@ An agent with shell + web access; a headless Chrome/Chromium. Optional: REA, the
 Want to protect your own site from grab-style agents? See **yravgAntiGrab**.
 
 ## License
-MIT. Support the project: PAYMENT_URL
+MIT © 2026 yraverage (Enrico Marlon). See [LICENSE](LICENSE) and [CHANGELOG](CHANGELOG.md).
+
+Support the project: PAYMENT_URL

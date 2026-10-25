@@ -1,5 +1,11 @@
 ---
 name: grab
+triggers:
+  - "/grab"
+  - "grab this"
+  - "reverse-engineer this product"
+  - "write a PRD of <url>"
+  - "teardown <product>"
 version: 0.1.0
 description: >-
   Wide product research plus UI/UX, animation and workflow capture, turned into a

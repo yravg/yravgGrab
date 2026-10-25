@@ -2,7 +2,7 @@
 
 # yravgGrab — grab any product into builder-ready docs, ethically
 
-![workflow](assets/workflow.svg)
+![workflow](assets/grab-flow.svg)
 
 ## The problem
 Studying a competitor or reference product means hours of screenshots, scattered notes and half-remembered flows. Agents can do it fast — but usually with no plan, no evidence trail and no respect for site owners' AI opt-outs.

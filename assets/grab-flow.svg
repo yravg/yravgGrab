@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 220" font-family="Inter,Arial,sans-serif">
+<style>
+.n{fill:#fff;stroke:#E6E2D8;stroke-width:1.5}.t{font-size:15px;fill:#1F1F1F;text-anchor:middle;font-weight:600}.s{font-size:11px;fill:#7F7F7F;text-anchor:middle}
+.f{fill:#B4532A;opacity:0;animation:on 8s infinite}
+#p{animation:mv 8s linear infinite}
+@keyframes mv{0%{transform:translateX(0)}90%,100%{transform:translateX(760px)}}
+
+.f1{animation-name:a1}.f2{animation-name:a2}.f3{animation-name:a3}.f4{animation-name:a4}.f5{animation-name:a5}
+@keyframes a1{0%,100%{opacity:.15}}
+@keyframes a2{0%,22%{opacity:0}25%,95%{opacity:.15}100%{opacity:0}}
+@keyframes a3{0%,44%{opacity:0}47%,95%{opacity:.15}100%{opacity:0}}
+@keyframes a4{0%,67%{opacity:0}70%,95%{opacity:.15}100%{opacity:0}}
+@keyframes a5{0%,88%{opacity:0}90%,95%{opacity:.15}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){#p,.f{animation:none}.f{opacity:.15}}
+</style>
+<rect width="960" height="220" fill="#FAF9F5"/>
+<line x1="100" y1="100" x2="860" y2="100" stroke="#E6E2D8" stroke-width="2" stroke-dasharray="6 6"/>
+<g>
+<rect class="n" x="30" y="60" width="140" height="80" rx="8"/><rect class="f f1" x="30" y="60" width="140" height="80" rx="8"/><text class="t" x="100" y="98">Gate</text><text class="s" x="100" y="118">scope · robots · licence</text>
+<rect class="n" x="220" y="60" width="140" height="80" rx="8"/><rect class="f f2" x="220" y="60" width="140" height="80" rx="8"/><text class="t" x="290" y="98">Capture</text><text class="s" x="290" y="118">screens, frames, flows</text>
+<rect class="n" x="410" y="60" width="140" height="80" rx="8"/><rect class="f f3" x="410" y="60" width="140" height="80" rx="8"/><text class="t" x="480" y="98">Analyse</text><text class="s" x="480" y="118">inventory · parity list</text>
+<rect class="n" x="600" y="60" width="140" height="80" rx="8"/><rect class="f f4" x="600" y="60" width="140" height="80" rx="8"/><text class="t" x="670" y="98">PRD</text><text class="s" x="670" y="118">html · md · pdf, captioned</text>
+<rect class="n" x="790" y="60" width="140" height="80" rx="8"/><rect class="f f5" x="790" y="60" width="140" height="80" rx="8"/><text class="t" x="860" y="98">Handoff</text><text class="s" x="860" y="118">roadmap · zip</text>
+</g>
+<circle id="p" cx="100" cy="150" r="6" fill="#B4532A"/>
+<text x="30" y="200" font-size="13" fill="#7F7F7F">yravgGrab · public pages only · respects robots.txt and site terms</text>
+</svg>

@@ -1,23 +1,12 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>yravgGrab</title><style>:root{--a:#B4532A}*{box-sizing:border-box}body{margin:0;background:#FAF9F5;color:#1F1F1F;font:16px/26px Inter,system-ui,sans-serif}
-.w{max-width:960px;margin:auto;padding:0 24px}nav{display:flex;justify-content:space-between;align-items:center;height:64px;border-bottom:1px solid #E6E2D8}
-nav b{font-size:18px}nav b span{color:var(--a)}nav a{color:#1F1F1F;text-decoration:none;margin-left:24px;font-size:14px}
-h1{font-size:40px;line-height:48px;margin:72px 0 16px;letter-spacing:-.02em}h2{font-size:24px;margin:72px 0 16px}p.l{color:#555;max-width:640px}
-.btn{display:inline-block;padding:10px 18px;border-radius:8px;background:var(--a);color:#fff;text-decoration:none;font-weight:600;margin:16px 12px 0 0}.btn.g{background:#fff;color:#1F1F1F;border:1px solid #E6E2D8}
-.fig{margin:40px 0;background:#fff;border:1px solid #E6E2D8;border-radius:8px;padding:16px}.fig img{width:100%;display:block}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}.card{background:#fff;border:1px solid #E6E2D8;border-radius:8px;padding:20px}.card h3{margin:0 0 6px;font-size:16px}.card p{margin:0;color:#555;font-size:14px;line-height:22px}
-ol.steps{padding-left:20px}ol.steps li{margin:8px 0}code,pre{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px}pre{background:#fff;border:1px solid #E6E2D8;border-radius:8px;padding:16px;overflow:auto}
-.slot{border:1px dashed #C9C3B5;border-radius:8px;padding:48px;text-align:center;color:#7F7F7F;font-size:14px}
-details{background:#fff;border:1px solid #E6E2D8;border-radius:8px;padding:14px 18px;margin:8px 0}summary{font-weight:600;cursor:pointer}
-.price{background:#fff;border:1px solid #E6E2D8;border-radius:8px;padding:28px;max-width:420px}.amt{font-size:40px;font-weight:700;margin:6px 0}.price ul{padding-left:18px;color:#555;font-size:14px}
-footer{margin:96px 0 40px;padding-top:20px;border-top:1px solid #E6E2D8;color:#7F7F7F;font-size:13px;display:flex;justify-content:space-between}footer a{color:#7F7F7F}</style></head><body><div class="w"><nav><b>yravg<span>Grab</span></b><div><a href="#how">How it works</a><a href="#install">Install</a><a href="#faq">FAQ</a><a href="https://GITHUB_USER.github.io/yravgAntiGrab/">AntiGrab</a></div></nav>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>yravgGrab</title><link rel="stylesheet" href="assets/yravg-ui.css"><style>:root{--accent:#B4532A}</style></head><body><div class="w"><nav class="bar"><b class="brand">yravg<span>Grab</span></b><div><a href="#how">How it works</a><a href="#install">Install</a><a href="#faq">FAQ</a><a href="https://GITHUB_USER.github.io/yravgAntiGrab/">AntiGrab</a></div></nav>
 <h1>Turn any public product into builder-ready docs.</h1>
-<p class="l">An agent skill that captures a public website, app or tutorial and writes a captioned PRD, a parity checklist and a build roadmap. It checks robots.txt and AI opt-outs first, and stops if the site says no.</p>
-<a class="btn" href="#install">Install the skill</a><a class="btn g" href="https://github.com/GITHUB_USER/yravgGrab">View on GitHub</a>
+<p class="lead">An agent skill that captures a public website, app or tutorial and writes a captioned PRD, a parity checklist and a build roadmap. It checks robots.txt and AI opt-outs first, and stops if the site says no.</p>
+<a class="btn" href="#install">Install the skill</a><a class="btn ghost" href="https://github.com/GITHUB_USER/yravgGrab">View on GitHub</a>
 <div class="fig"><img src="assets/grab-flow.svg" alt="yravgGrab workflow: Gate, Capture, Analyse, PRD, Handoff"></div>
 <h2 id="how">How it works</h2>
 <div class="grid"><div class="card"><h3>1. Gate</h3><p>Checks scope, robots.txt, AI opt-out and licence before touching anything.</p></div><div class="card"><h3>2. Capture</h3><p>Screens, states, video frames and user flows from public pages.</p></div><div class="card"><h3>3. Analyse</h3><p>Builds an inventory and a parity checklist of menus, flows and motion.</p></div><div class="card"><h3>4. PRD</h3><p>One offline HTML file plus md and PDF, every screenshot captioned with numbered markers.</p></div><div class="card"><h3>5. Handoff</h3><p>A build roadmap and a zip any coder or agent can start from.</p></div></div>
 <h2>What you get</h2><div class="fig"><img src="assets/sample-prd.png" alt="Sample PRD made by yravgGrab from the yravgAntiGrab landing page"></div>
-<h2 id="install">Install</h2><pre>cp -r yravgGrab ~/.claude/skills/</pre><p class="l">Works in Claude Code and Cursor. Then ask your agent to <code>/grab</code> a URL.</p>
-<h2>Use responsibly</h2><p class="l">Public pages only. No logins, paywalls or bypassing blocks. If a site opts out of AI or forbids it in its terms, yravgGrab stops.</p>
+<h2 id="install">Install</h2><pre>cp -r yravgGrab ~/.claude/skills/</pre><p class="lead">Works in Claude Code and Cursor. Then ask your agent to <code>/grab</code> a URL.</p>
+<h2>Use responsibly</h2><p class="lead">Public pages only. No logins, paywalls or bypassing blocks. If a site opts out of AI or forbids it in its terms, yravgGrab stops.</p>
 <h2 id="faq">FAQ</h2><details><summary>Is it free?</summary><p>Yes, MIT licensed.</p></details><details><summary>Can it grab sites behind a login?</summary><p>No. It only works on public pages.</p></details><details><summary>How do I protect my own site from tools like this?</summary><p>See <a href="https://GITHUB_USER.github.io/yravgAntiGrab/">yravgAntiGrab</a>.</p></details>
-<footer><span>MIT · yravg</span><a href="PAYMENT_URL">Support yravg</a></footer></div></body></html>
+<footer class="foot"><span>MIT · yravg</span><a href="PAYMENT_URL">Support yravg</a></footer></div></body></html>

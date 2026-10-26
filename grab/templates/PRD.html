@@ -1,8 +1,90 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><title>PRD — TARGET</title>
-<style>body{font:15px/1.6 Inter,system-ui,sans-serif;max-width:960px;margin:40px auto;padding:0 20px;color:#1d2330}h1,h2{line-height:1.2}figure{margin:24px 0;border:1px solid #e3e6ee;border-radius:10px;overflow:hidden}figure img{width:100%;display:block}figcaption{padding:10px 14px;font-size:13px;background:#f7f8fb}table{border-collapse:collapse;width:100%}td,th{border:1px solid #e3e6ee;padding:6px 8px;font-size:13px}nav a{margin-right:12px}</style>
-<h1>PRD — TARGET</h1><nav><a href="#overview">Overview</a><a href="#features">Features</a><a href="#workflows">Workflows</a><a href="#design">Design</a><a href="#open">Open questions</a></nav>
+<meta name="viewport" content="width=device-width,initial-scale=1"><style>/* yravg-ui.css v1.0 inlined (offline single file) */
+/* yravg-ui.css v1.0 — the single shared stylesheet for all yravg HTML pages.
+   Source of truth: /workspace/yravg-oss/design/yravg-ui.css · spec: design/DESIGN.md
+   Per page set only:  :root{--accent:#B4532A}  (Grab clay · AntiGrab #2F4A5C slate · Wallet #3F7D5A sage) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+:root{
+  --accent:#B4532A; --danger:#8E3B24; --warn:#C98A2B; --ok:#3F7D5A;
+  --canvas:#FAF9F5; --surface:#FFFFFF; --line:#E6E2D8; --line-strong:#C9C3B5; --track:#EEE9DF;
+  --ink:#1F1F1F; --ink-dim:rgba(31,31,31,.62); --ink-faint:rgba(31,31,31,.45); --ink-off:rgba(31,31,31,.28);
+  --font:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --t11:11px; --t12:12px; --t13:13px; --t15:15px; --t18:18px; --t26:26px; --t44:44px;
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:40px; --s6:48px; --s9:72px; --s12:96px;
+  --r-card:10px; --r-input:8px; --r-chip:999px;
+  --nav-w:232px; --content:1120px; --prose:960px;
+  /* motion tokens (CSS approximations of springs; JS: panel {400,32}, ui {700,53}) */
+  --spring-panel:cubic-bezier(.22,1,.36,1); --spring-panel-ms:320ms;
+  --spring-ui:cubic-bezier(.25,1,.5,1); --spring-ui-ms:180ms;
+  --out-ms:140ms; --route-ms:260ms; --dwell:220ms; --enter-scale:.94; --enter-y:6px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--canvas);color:var(--ink);font:var(--t15)/1.6 var(--font)}
+a{color:var(--accent)}
+h1,h2,h3{line-height:1.2;letter-spacing:-.01em;overflow-wrap:anywhere}
+h1{font-size:var(--t44);line-height:52px;letter-spacing:-.02em;margin:var(--s9) 0 var(--s2)}
+h2{font-size:var(--t26);margin:var(--s9) 0 var(--s2)}
+h3{font-size:var(--t18);margin:0 0 var(--s1)}
+p{overflow-wrap:anywhere}
+code,pre,kbd{font-family:var(--mono);font-size:var(--t13)}
+pre{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:var(--s2);overflow:auto}
+.num,.value,.amt,td.num{font-variant-numeric:tabular-nums}
+/* layout */
+.w{max-width:var(--prose);margin:auto;padding:0 var(--s3)}
+.app{display:flex;min-height:100vh}
+.app>nav.side{width:var(--nav-w);flex:none;border-right:1px solid var(--line);padding:20px}
+.app>main{flex:1;min-width:0;max-width:var(--content);padding:var(--s3) var(--s4)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:var(--s2)}
+.row{display:grid;gap:var(--s2);margin-top:var(--s2)}
+.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.cols-2-1{grid-template-columns:2fr 1fr}
+.top{display:flex;justify-content:space-between;align-items:center;gap:var(--s2)}
+/* nav */
+nav.bar{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);min-height:64px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{font-size:var(--t18);font-weight:700}.brand span{color:var(--accent)}
+nav.bar a{color:var(--ink);text-decoration:none;margin-left:var(--s3);font-size:var(--t13)}
+nav.side a{display:block;padding:var(--s1) 10px;border-radius:var(--r-input);color:var(--ink-dim);text-decoration:none;margin-top:4px;font-size:var(--t13)}
+nav.side a.on{background:color-mix(in srgb,var(--accent) 9%,transparent);color:var(--accent);font-weight:600}
+/* text roles */
+.lead{color:var(--ink-dim);max-width:640px;font-size:var(--t18);line-height:1.5}
+.label{font-size:var(--t11);color:var(--ink-dim);text-transform:uppercase;letter-spacing:.04em}
+.sub,.muted{font-size:var(--t12);color:var(--ink-dim)}
+.value{font-size:var(--t26);font-weight:700;margin:6px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.up{color:var(--ok)}.bad{color:var(--danger)}
+/* surfaces */
+.card,.fig,details,.price{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
+.card{padding:20px;min-width:0}.card p{margin:0;color:var(--ink-dim);font-size:var(--t13);line-height:20px}
+.fig{margin:var(--s5) 0;padding:var(--s2)}.fig img,.fig svg{width:100%;display:block}
+.slot{border:1px dashed var(--line-strong);border-radius:var(--r-input);padding:var(--s3);min-height:110px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--ink-faint);font-size:var(--t13);margin-top:10px}
+.slot.tall{min-height:200px}
+details{padding:14px 18px;margin:var(--s1) 0}summary{font-weight:600;cursor:pointer}
+.price{padding:28px;max-width:420px}.amt{font-size:var(--t44);font-weight:700;margin:6px 0;line-height:1.1}.price ul{padding-left:18px;color:var(--ink-dim);font-size:var(--t13)}
+ol.steps{padding-left:20px}ol.steps li{margin:var(--s1) 0}
+.meter{height:8px;border-radius:var(--r-chip);background:var(--track);margin:6px 0 12px}.meter i{display:block;height:100%;border-radius:var(--r-chip);background:var(--ok)}
+.meter i.warn{background:var(--warn)}.meter i.over{background:var(--danger)}
+.chip{display:inline-block;padding:2px 10px;border-radius:var(--r-chip);border:1px solid var(--line);font-size:var(--t12)}
+/* buttons */
+.btn{display:inline-block;padding:10px 18px;border-radius:var(--r-input);background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:var(--t13);border:1px solid transparent;cursor:pointer;margin:var(--s2) 12px 0 0;transition:transform var(--spring-ui-ms) var(--spring-ui)}
+.btn:active{transform:scale(.97)}.btn.sm{padding:8px 14px;margin:0}
+.btn.ghost{background:var(--surface);color:var(--ink);border-color:var(--line)}
+/* tables, PRD figures */
+table{border-collapse:collapse;width:100%;font-size:var(--t13);margin-top:14px}
+td,th{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}th{background:var(--canvas);font-weight:600}
+figure{margin:var(--s3) 0;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;background:var(--surface);position:relative}
+figure img{width:100%;display:block}figcaption,.cap{padding:12px 16px;font-size:var(--t13);background:var(--surface);border-top:1px solid var(--line)}
+.marker{position:absolute;width:26px;height:26px;border-radius:50%;background:var(--danger);color:#fff;font-weight:700;text-align:center;line-height:26px;font-size:var(--t13)}
+.toc a{margin-right:var(--s2);font-size:var(--t13)}
+footer.foot{margin:var(--s12) 0 var(--s5);padding-top:20px;border-top:1px solid var(--line);color:var(--ink-faint);font-size:var(--t13);display:flex;justify-content:space-between;gap:var(--s2);flex-wrap:wrap}footer.foot a{color:inherit}
+/* motion: enter, nothing animates at rest */
+.enter{animation:yr-enter var(--spring-panel-ms) var(--spring-panel) both}
+@keyframes yr-enter{from{opacity:0;transform:translateY(var(--enter-y)) scale(var(--enter-scale))}to{opacity:1;transform:none}}
+@media (max-width:760px){h1{font-size:var(--t26);line-height:32px}.cols-4,.cols-3,.cols-2-1{grid-template-columns:1fr 1fr}.app>nav.side{display:none}nav.bar a{margin-left:var(--s2)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+:root{--accent:#B4532A}</style>
+<body><div class="w"><h1>PRD — TARGET</h1><nav class="toc"><a href="#overview">Overview</a><a href="#features">Features</a><a href="#workflows">Workflows</a><a href="#design">Design</a><a href="#open">Open questions</a></nav>
 <h2 id="overview">1. Overview</h2><p>…</p>
 <h2 id="features">3. Features</h2><table><tr><th>FR</th><th>Feature</th><th>Evidence</th></tr></table>
 <h2 id="workflows">4. Workflows</h2><svg viewBox="0 0 600 80" width="100%"><!-- inline SVG flow --></svg>
 <figure><img src="data:image/jpeg;base64,..." alt=""><figcaption><b>Fig 1 — Screen.</b> Reach: … Happens: … Markers: ① … FR: FR-001. Source: …</figcaption></figure>
-<h2 id="design">5. Design system</h2><h2 id="open">12. Open questions</h2></html>
+<h2 id="design">5. Design system</h2><h2 id="open">12. Open questions</h2></div></body></html>

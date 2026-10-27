@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Robo Capture",
+  "description": "Pick elements on any page and copy them as structured web-capture JSON for Claude Design.",
+  "version": "1.0.0",
+  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" },
+  "action": { "default_title": "Robo Capture - click to toggle the element picker" },
+  "background": { "service_worker": "background.js" },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "web_accessible_resources": [
+    { "resources": ["fonts/*.woff2"], "matches": ["<all_urls>"] }
+  ]
+}

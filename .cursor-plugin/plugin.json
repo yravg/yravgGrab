@@ -1,0 +1,13 @@
+{
+  "name": "yravgGrab",
+  "displayName": "yravgGrab",
+  "version": "0.2.0",
+  "description": "Ethical product research and UI capture for agents: permission gate, web capture with Robo Capture, click-through records, repo reverse engineering, and builder-ready PRDs.",
+  "author": { "name": "yraverage (Enrico Marlon)" },
+  "homepage": "https://github.com/yravg/yravgGrab",
+  "repository": "https://github.com/yravg/yravgGrab",
+  "license": "MIT",
+  "keywords": ["yravgGrab-mode", "web-capture", "prd", "ui-capture", "research"],
+  "category": "developer-tools",
+  "skills": "./skills/"
+}

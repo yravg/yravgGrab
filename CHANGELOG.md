@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-27
+
+### Added
+- Plugin manifests for Cursor and Claude Code.
+- Skills: `yravgGrab-mode`, `yravgGrab-WebCapture`, `yravgGrab-ClickDetails`, `yravgGrab-REA`.
+- Vendored Robo Capture v1.0.0 (Jay, RoboLabs, CC BY 4.0) with LICENSE and NOTICE.
+
 ## [0.1.0] - 2026-10-26
 
 ### Added

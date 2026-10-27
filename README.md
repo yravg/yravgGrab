@@ -73,3 +73,21 @@ Want to protect your own site from grab-style agents? See **yravgAntiGrab**.
 MIT © 2026 yraverage (Enrico Marlon). See [LICENSE](LICENSE) and [CHANGELOG](CHANGELOG.md).
 
 Support the project: PAYMENT_URL
+
+
+## Plugin (Cursor / Claude Code)
+
+This repo is a plugin (`.cursor-plugin/plugin.json`, `.claude-plugin/plugin.json`) with four skills in `skills/`:
+
+| Skill | Use |
+|---|---|
+| `/yravgGrab-mode` | Main working mode: gate, rules, workflow, deliverables |
+| `/yravgGrab-WebCapture` | Web capture protocol with Robo Capture element JSON, states, frame-by-frame animation, charts, tokens |
+| `/yravgGrab-ClickDetails` | Exhaustive click-through record of desktop or web app controls, diffed against your app |
+| `/yravgGrab-REA` | Reverse-engineer top open-source repos in an area, respecting licences |
+
+The original `/grab` skill and its templates stay in `grab/`.
+
+## Third-party
+
+`vendor/robo-capture/` is **Robo Capture by Jay, RoboLabs**, licensed under CC BY 4.0 and redistributed unmodified. See `vendor/robo-capture/LICENSE` and `NOTICE.md`. The MIT licence of this repo does not cover that folder.
